@@ -43,17 +43,17 @@ function App() {
 
   return ready ? (
     <div className="App">
-      <p class="title">GIF MAKER</p>
+      <p className="title">GIF MAKER</p>
       {video && (
         <video controls width="720" src={URL.createObjectURL(video)}></video>
       )}
       <input
-        class="select-file"
+        className="select-file"
         type="file"
         onChange={(e) => setVideo(e.target.files?.item(e))}
       />
       <h3>Resultado</h3>
-      <button class="button" onClick={convertToGif}>
+      <button className="button" onClick={convertToGif}>
         Convertir
       </button>
       {gif && <img src={gif} width="720" />}
