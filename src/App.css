@@ -1,8 +1,28 @@
+body {
+  background-color: #282c34;
+}
 .App {
   text-align: center;
+  padding-top: 2vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.title {
+  color: rgb(17, 138, 207);
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 2em;
+}
+.select-file {
+  margin-top: 2em;
+}
+video,
+img {
+  margin: 20px 0;
 }
 .App code {
-  background: #FFF3;
+  background: #fff3;
   padding: 4px 8px;
   border-radius: 4px;
 }
@@ -42,4 +62,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4caf50;
+  color: white;
 }

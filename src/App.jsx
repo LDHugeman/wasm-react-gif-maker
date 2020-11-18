@@ -21,7 +21,17 @@ function App() {
   const convertToGif = async () => {
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
 
-    await ffmpeg.run('-i', 'test.mp4', '-t', '2.5', '-ss', '2.0');
+    await ffmpeg.run(
+      '-i',
+      'test.mp4',
+      '-t',
+      '15',
+      '-ss',
+      '2.0',
+      '-f',
+      'gif',
+      'out.gif',
+    );
 
     const data = ffmpeg.FS('readFile', 'out.gif');
 
@@ -33,13 +43,20 @@ function App() {
 
   return ready ? (
     <div className="App">
+      <p class="title">GIF MAKER</p>
       {video && (
-        <video controls width="250" src={URL.createObjectURL(video)}></video>
+        <video controls width="720" src={URL.createObjectURL(video)}></video>
       )}
-      <input type="file" onChange={(e) => setVideo(e.target.files?.item(e))} />
-      <h3>Result</h3>
-      <button onClick={convertToGif}>Convert</button>
-      {gif && <img src={gif} width="250" />}
+      <input
+        class="select-file"
+        type="file"
+        onChange={(e) => setVideo(e.target.files?.item(e))}
+      />
+      <h3>Resultado</h3>
+      <button class="button" onClick={convertToGif}>
+        Convertir
+      </button>
+      {gif && <img src={gif} width="720" />}
     </div>
   ) : (
     <p>Loading...</p>
