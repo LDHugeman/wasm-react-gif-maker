@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   // Create the count state.
+  
   const [count, setCount] = useState(0);
   // Create the counter (+1 every second).
   useEffect(() => {
